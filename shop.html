@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BBT MOTORSPOR — Shop</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="img/logo.jpeg" type="image/x-icon">
+    <style>
+        nav {
+            background-color: #20201F;
+        }
+
+        .shop-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .shop-header h2 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            color: #20201F;
+            text-shadow: 0 0 25px rgba(238, 110, 77, .5);
+        }
+
+        .shop-header p {
+            color: #bdbdbd;
+        }
+
+        /* FEATURED */
+        .product-feature {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 45px;
+            margin-bottom: 90px;
+
+        }
+
+        .product-feature img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 22px;
+            box-shadow: 0 0 40px rgba(238, 110, 77, .3);
+        }
+
+        .feature-content .tag {
+            background: #EE6E4D;
+            color: #000;
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 14px;
+            box-shadow: 0px 0px 10px #262625;
+        }
+
+        .feature-content h3 {
+            font-size: 2rem;
+            color: #20201F;
+            margin-bottom: 10px;
+        }
+
+        .feature-content p {
+            color: #bdbdbd;
+            margin-bottom: 16px
+        }
+
+        .price {
+            font-size: 1.8rem;
+            color: #EE6E4D;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 0px 0px 10px #262625;
+        }
+
+        .feature-content button {
+            padding: 14px 34px;
+            border: none;
+            border-radius: 40px;
+            background: #EE6E4D;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0px 0px 10px #262625;
+        }
+
+        /* GRID */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 35px;
+        }
+
+        .product-card {
+            background: #262625;
+            border-radius: 22px;
+            overflow: hidden;
+            border: 1px solid rgba(238, 110, 77, .25);
+            transition: .4s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 0 40px rgba(238, 110, 77, .35);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 22px;
+        }
+
+        .card-content h4 {
+            font-size: 1.3rem;
+            margin-bottom: 6px;
+            color: #EE6E4D;
+        }
+
+        .card-content p {
+            color: #bdbdbd;
+            margin-bottom: 12px
+        }
+
+        .card-content .price {
+            font-size: 1.4rem
+        }
+
+        .card-content button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 30px;
+            background: #EE6E4D;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        /* ---------------- BUY BUTTON ---------------- */
+        .buy-btn {
+            width: 100%;
+            padding: 14px;
+            border-radius: 35px;
+            border: none;
+            background: linear-gradient(135deg, #EE6E4D, #FF8C42);
+            color: #000;
+            font-size: 1.05rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.1s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .buy-btn::after {
+            content: '';
+            position: absolute;
+            width: 120%;
+            height: 120%;
+            background: rgba(255, 255, 255, 0.3);
+            top: -120%;
+            left: -10%;
+            transform: rotate(25deg);
+        }
+
+        .buy-btn:hover::after {
+            top: 120%;
+            transition: 0.1s;
+        }
+
+        .buy-btn:hover {
+            transform: scale(1.05);
+        }
+
+        /* ---------- FLIP IMAGE EFFECT ---------- */
+
+        .flip-img {
+            position: relative;
+            width: 100%;
+            height: 210px;
+            perspective: 1000px;
+        }
+
+        .flip-img img {
+            position: absolute;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            backface-visibility: hidden;
+            transition: transform 0.6s ease;
+        }
+
+        /* Front image */
+        .flip-img .front {
+            transform: rotateY(0deg);
+        }
+
+        /* Back image */
+        .flip-img .back {
+            transform: rotateY(180deg);
+        }
+
+        /* Hover effect */
+        .product-card:hover .flip-img .front {
+            transform: rotateY(-180deg);
+        }
+
+        .product-card:hover .flip-img .back {
+            transform: rotateY(0deg);
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo"><img src="img/logo2.png" alt="logo">
+            <a href="index.html">BBT MOTORSPOR</a>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="why.html">Why Us</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <section class="shop-mag">
+
+        <div class="shop-header">
+            <h2>Lights & Accessories</h2>
+            <p>Performance-focused upgrades for your vehicle</p>
+        </div>
+
+        <div class="product-feature">
+            <img src="img/light1.jfif">
+            <div class="feature-content">
+                <span class="tag">FEATURED</span>
+                <h3>High-Power LED Headlights</h3>
+                <p>Superior brightness with aggressive styling.</p>
+                <div class="price">$75.00</div>
+                <button class="buy-btn" onclick="buyNow('LED Headlight','$75.00','High power LED headlights')">
+                    Buy on WhatsApp
+                </button>
+            </div>
+        </div>
+
+        <div class="product-grid">
+
+            <div class="product-card">
+                <div class="flip-img">
+                    <img src="img/light2.jfif" class="front">
+                    <img src="img/light4.jfif" class="back">
+                </div>
+                <div class="card-content">
+                    <h4>Fog Lights</h4>
+                    <p>All-weather road visibility.</p>
+                    <div class="price">$50.00</div>
+                    <button class="buy-btn" onclick="buyNow('Fog Light','$50.00','Fog light set')">Buy Now</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="img/light3.jfif">
+                <div class="card-content">
+                    <h4>LED Light Strip</h4>
+                    <p>Interior & exterior ambient glow.</p>
+                    <div class="price">$30.00</div>
+                    <button class="buy-btn" onclick="buyNow('LED Strip','$30.00','LED light strip')">Buy Now</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+        function buyNow(name, price, desc) {
+            const msg =
+                `Hi BBT MOTORSPOR 👋
+I want to buy:
+Product: ${name}
+Price: ${price}
+Details: ${desc}`;
+            window.open(`https://wa.me/3468378546?text=${encodeURIComponent(msg)}`, "_blank");
+        }
+    </script>
+
+    <footer>© 2025 BBT MOTORSPOR. All rights reserved.</footer>
+
+</body>
+
+</html>
