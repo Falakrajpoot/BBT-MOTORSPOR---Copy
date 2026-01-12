@@ -83,6 +83,7 @@
             font-weight: 700;
             cursor: pointer;
             box-shadow: 0px 0px 10px #262625;
+            transition: all 1s;
         }
 
         /* GRID */
@@ -154,6 +155,7 @@
             transition: all 0.1s;
             position: relative;
             overflow: hidden;
+            transition: all 1s;
         }
 
         .buy-btn::after {
@@ -165,11 +167,12 @@
             top: -120%;
             left: -10%;
             transform: rotate(25deg);
+            transition: all 1s;
         }
 
         .buy-btn:hover::after {
             top: 120%;
-            transition: 0.1s;
+            transition: 1s;
         }
 
         .buy-btn:hover {
@@ -266,7 +269,10 @@
             </div>
 
             <div class="product-card">
-                <img src="img/light3.jfif">
+                <div class="flip-img">
+                    <img src="img/light2.jfif" class="front">
+                    <img src="img/light3.jfif" class="back">
+                </div>
                 <div class="card-content">
                     <h4>LED Light Strip</h4>
                     <p>Interior & exterior ambient glow.</p>

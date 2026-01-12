@@ -466,6 +466,7 @@ section {
     padding: 10px 14px;
     border-radius: 12px;
     cursor: pointer;
+    transition: all 1s;
 }
 
 .buy-btn:hover {
